@@ -7,17 +7,22 @@ import sys
 HEADER_LENGTH = 16
 
 
+def bint(integer, width=4):
+	integer_bytes = (integer).to_bytes(width, 'big')
+	return integer_bytes
+
+
 def get_header_bytes(header_lines_count, column_count, row_length, row_count):
 	parts = [
-		(0).to_bytes(2, 'big'),
-		(0).to_bytes(2, 'big'),
+		bint(0, 2),
+		bint(0, 2),
 
-		(header_lines_count).to_bytes(1, 'big'),
-		(column_count).to_bytes(1, 'big'),
-		(row_length).to_bytes(2, 'big'),
+		bint(header_lines_count, 1),
+		bint(column_count, 1),
+		bint(row_length, 2),
 
-		(row_count).to_bytes(4, 'big'),
-		(0).to_bytes(4, 'big'),
+		bint(row_count, 4),
+		bint(0, 4),
 	]
 	header_bytes = b''.join(parts)
 	return header_bytes
@@ -29,7 +34,7 @@ def candle_to_bytes(candle):
 	ohlc = candle[1:5]
 	ohlc = [int(x*100) for x in ohlc]
 	new_candle = [t, *ohlc, v]
-	byte_candle = [(x).to_bytes(4, 'big') for x in new_candle]
+	byte_candle = [bint(x, 4) for x in new_candle]
 	candle_bytes = b''.join(byte_candle)
 	return candle_bytes
 
