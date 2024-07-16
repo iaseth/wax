@@ -5,6 +5,21 @@ Wax is a binary file format for storing Candle data.
 
 
 
+## Wax File Header
+A Header line is always exactly 16 bytes long.
+
+| Name | Size | Description |
+| ---- | ---- | ---- |
+| Version | 2 | The version of wax used for creating this file. |
+| Format | 2 | The format Id of wax file. |
+| Extra Headers | 1 | Number of lines of extra headers after this line. |
+| Columns Count | 1 | Number of Columns in each Row. |
+| Row Length | 2 | Length of a single Row. |
+| Row Count | 4 | Number of Rows in the file. |
+| Default Value | 4 | Future Use. |
+
+
+
 ## Format List
 
 | Name | Size | Layout |
