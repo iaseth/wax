@@ -24,6 +24,7 @@ A Header line is always exactly 16 bytes long.
 
 | Code | Name | Size | Fields | Layout |
 | ---- | ---- | ---- | ---- | ---- |
+|  0 | Custom     | ?  | `Any`      | `Any`        |
 |  1 | Index B2   | 12 | `TOHLC`    | `42222`      |
 |  2 | Index B3   | 16 | `TOHLC`    | `43333`      |
 |  3 | Index B4   | 20 | `TOHLC`    | `44444`      |
