@@ -22,20 +22,17 @@ A Header line is always exactly 16 bytes long.
 
 ## Format List
 
-| Name | Size | Layout |
-| ---- | ---- | ---- |
-| Index Default  | 20 | `TOHLC`<br>`44444`      |
-| Stock Default  | 24 | `TOHLCV`<br>`444444`    |
-| Future Default | 28 | `TOHLCVOi`<br>`4444444` |
-| Option Default | 28 | `TOHLCVOi`<br>`4444444` |
-| Crypto Default | 24 | `TOHLCV`<br>`444444`    |
-| Forex Default  | 24 | `TOHLCV`<br>`444444`    |
-| Index B3       | 16 | `TOHLC`<br>`43333`      |
-| Stock B3       | 20 | `TOHLCV`<br>`433334`    |
-| Future B3      | 24 | `TOHLCVOi`<br>`4333344` |
-| Option B3      | 24 | `TOHLCVOi`<br>`4333344` |
-| Crypto B3      | 20 | `TOHLCV`<br>`433334`    |
-| Forex B3       | 20 | `TOHLCV`<br>`433334`    |
+| Code | Name | Size | Fields | Layout |
+| ---- | ---- | ---- | ---- | ---- |
+|  1 | Index B2   | 12 | `TOHLC`    | `42222`      |
+|  2 | Index B3   | 16 | `TOHLC`    | `43333`      |
+|  3 | Index B4   | 20 | `TOHLC`    | `44444`      |
+|  4 | Stock B2   | 16 | `TOHLCV`   | `422224`     |
+|  5 | Stock B3   | 20 | `TOHLCV`   | `433334`     |
+|  6 | Stock B4   | 24 | `TOHLCV`   | `444444`     |
+|  7 | Option B2  | 20 | `TOHLCVO`  | `4222244`    |
+|  8 | Option B3  | 24 | `TOHLCVO`  | `4333344`    |
+|  9 | Option B4  | 28 | `TOHLCVO`  | `4444444`    |
 
 
 
@@ -43,13 +40,13 @@ A Header line is always exactly 16 bytes long.
 
 | Field | Bytes | Max Value |
 | ----- | ----- | --------- |
-| Timestamp | 4 | 4B |
-| Open   | 4 | 40M |
-| High   | 4 | 40M |
-| Low    | 4 | 40M |
-| Close  | 4 | 40M |
-| Volume | 4 | 4B |
-| **Total** | 24 | - |
+| Timestamp | 4  | 4B  |
+| Open      | 4  | 40M |
+| High      | 4  | 40M |
+| Low       | 4  | 40M |
+| Close     | 4  | 40M |
+| Volume    | 4  | 4B  |
+| **Total** | 24 | -   |
 
 
 
