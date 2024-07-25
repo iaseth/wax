@@ -4,18 +4,30 @@
 Wax is a binary file format for storing Candle data.
 
 
+## Wax Implementations
+
+| Repository | Language | Description |
+| ---------- | -------- | ----------- |
+| [waxpy](https://github.com/iaseth/waxpy)             | Python     | Wax Creator, Editor and WaxLib. |
+| [waxfile-cli](https://github.com/iaseth/waxfile-cli) | JavaScript | Wax Creator and Editor. |
+| [waxfile](https://github.com/iaseth/waxfile)         | JavaScript | WaxLib. |
+| [wax-c](https://github.com/iaseth/wax-c)             | C          | Wax Editor and WaxLib. |
+| [wax-cpp](https://github.com/iaseth/wax-cpp)         | C++        | Wax Editor and WaxLib. |
+| [wax-dotnet](https://github.com/iaseth/wax-dotnet)   | C#         | Wax Editor and WaxLib. |
+
+
 
 ## Wax File Header
 A Header line is always exactly 16 bytes long.
 
 | Name | Size | Description |
 | ---- | ---- | ---- |
-| Version | 2 | The version of wax used for creating this file. |
-| Format | 2 | The format Id of wax file. |
-| Extra Headers | 1 | Number of lines of extra headers after this line. |
+| Version       | 2 | The version of wax used for creating this file. |
+| Encoding      | 2 | The Encoding Id of wax file. |
+| Header Count  | 1 | Number of lines of extra headers after this line. |
 | Columns Count | 1 | Number of Columns in each Row. |
-| Row Length | 2 | Length of a single Row. |
-| Row Count | 4 | Number of Rows in the file. |
+| Row Length    | 2 | Length of a single Row. |
+| Row Count     | 4 | Number of Rows in the file. |
 | Default Value | 4 | Future Use. |
 
 
@@ -44,7 +56,7 @@ A Header line is always exactly 16 bytes long.
 
 | Field | Bytes | Max Value |
 | ----- | ----- | --------- |
-| Timestamp | 4  | 4B  |
+| Timestamp | 4  | 1970-2100  |
 | Open      | 4  | 40M |
 | High      | 4  | 40M |
 | Low       | 4  | 40M |
@@ -58,7 +70,7 @@ A Header line is always exactly 16 bytes long.
 
 | Symbol | Field | Description |
 | ----- | ----- | ----- |
-| T | Timestamp | ?|
+| T | Timestamp | ? |
 | D | Date      | ? |
 | M | Minutes   | ? |
 | S | Seconds   | ? |
@@ -67,7 +79,7 @@ A Header line is always exactly 16 bytes long.
 | L | Low       | ? |
 | C | Close     | ? |
 | V | Volume    | ? |
-| I | Open Interest (LTP)     | ? |
+| I | Open Interest (OI)     | ? |
 | L | Last Traded Price (LTP) | ? |
 
 
